@@ -39,9 +39,10 @@ public class BrotherPrinter extends CordovaPlugin {
     //String filePath = "/storage/emulated/0/Digital Editions/racun.pdf";
     //String filePath = "/storage/emulated/0/Bluetooth/20150116_144555.jpg";
     //PrinterStatus status = myPrinter.printPDF(filePath, 1);
-    Bitmap image = base64ToBitmap(data);
+
     PrinterStatus status = null;
     try {
+        Bitmap image = base64ToBitmap(data);
         status = myPrinter.printImage(image);
         callbackContext.success();
     } catch(Exception exc) {
