@@ -41,7 +41,7 @@ public class Printer extends CordovaPlugin {
         status = myPrinter.printFile(filePath);
         callbackContext.success();
     } catch(Exception exc) {
-        callbackContext.error(exc.getMessage());ß
+        callbackContext.error(exc.getMessage());
     }
   }
 }
