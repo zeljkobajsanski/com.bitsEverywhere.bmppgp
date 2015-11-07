@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2014 PayPal. All rights reserved. -->
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:rim="http://www.blackberry.com/ns/widgets"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.bitseverywhere.plugins.brotherPrinter"
+    version="1.0.0">
+    <name>Brother Mobile Printer</name>
+    <description>Plugin for Brother Mobile Printer</description>
+    <license>BSD License, see LICENSE.md for details</license>
+    <engines>
+            <engine name="cordova" version="&gt;=3.0.0" />
+    </engines>
+
+
+    <js-module src="www/printer.js" name="BrotherPrinter">
+        <clobbers target="BrotherPrinter" />
+    </js-module>
+
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="BrotherPrinter">
+                <param name="android-package" value="com.bitseverywhere.brother.BrotherPrinter" />
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/Printer.java" target-dir="src/com/bitseverywhere/brother" />
+        <source-file src="src/android/libs/BrotherPrinterLibrary.jar" target-dir="libs" />
+        <source-file src="src/android/libs/armeabi" target-dir="libs" />
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+          <uses-permission android:name="android.permission.BLUETOOTH"/>
+          <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+          <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+        </config-file>
+    </platform>
+</plugin>
