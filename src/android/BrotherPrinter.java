@@ -9,6 +9,9 @@ import android.bluetooth.BluetoothAdapter;
 import com.brother.ptouch.sdk.Printer;
 import com.brother.ptouch.sdk.PrinterInfo;
 import com.brother.ptouch.sdk.PrinterStatus;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Base64;
 
 public class BrotherPrinter extends CordovaPlugin {
 
@@ -34,14 +37,21 @@ public class BrotherPrinter extends CordovaPlugin {
     myPrinterInfo.numberOfCopies = 1;
     myPrinter.setPrinterInfo(myPrinterInfo);
     //String filePath = "/storage/emulated/0/Digital Editions/racun.pdf";
-    String filePath = "/storage/emulated/0/Bluetooth/20150116_144555.jpg";
+    //String filePath = "/storage/emulated/0/Bluetooth/20150116_144555.jpg";
     //PrinterStatus status = myPrinter.printPDF(filePath, 1);
+    Bitmap image = base64ToBitmap(data);
     PrinterStatus status = null;
     try {
-        status = myPrinter.printFile(filePath);
+        status = myPrinter.printImage(image);
         callbackContext.success();
     } catch(Exception exc) {
         callbackContext.error(exc.getMessage());
     }
   }
+
+  private Bitmap base64ToBitmap(String imageData)
+    {
+        byte[] imageAsBytes = Base64.decode(imageData.getBytes(), Base64.DEFAULT);
+        return BitmapFactory.decodeByteArray(imageAsBytes, 0, imageAsBytes.length);
+    }
 }
