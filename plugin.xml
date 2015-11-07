@@ -26,7 +26,7 @@
             </feature>
         </config-file>
 
-        <source-file src="src/android/Printer.java" target-dir="src/com/bitseverywhere/brother" />
+        <source-file src="src/android/BrotherPrinter.java" target-dir="src/com/bitseverywhere/brother" />
         <source-file src="src/android/libs/BrotherPrintLibrary.jar" target-dir="libs" />
         <source-file src="src/android/libs/armeabi" target-dir="libs" />
 

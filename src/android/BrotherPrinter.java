@@ -10,7 +10,7 @@ import com.brother.ptouch.sdk.Printer;
 import com.brother.ptouch.sdk.PrinterInfo;
 import com.brother.ptouch.sdk.PrinterStatus;
 
-public class Printer extends CordovaPlugin {
+public class BrotherPrinter extends CordovaPlugin {
 
   @Override
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
