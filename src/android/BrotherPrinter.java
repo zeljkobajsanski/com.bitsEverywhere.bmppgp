@@ -44,7 +44,7 @@ public class BrotherPrinter extends CordovaPlugin {
     try {
         Bitmap image = base64ToBitmap(data);
         status = myPrinter.printImage(image);
-        callbackContext.success();
+        callbackContext.success(status.errorCode);
     } catch(Exception exc) {
         callbackContext.error(exc.getMessage());
     }
