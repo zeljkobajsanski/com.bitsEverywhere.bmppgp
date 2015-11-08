@@ -9,6 +9,7 @@ import android.bluetooth.BluetoothAdapter;
 import com.brother.ptouch.sdk.Printer;
 import com.brother.ptouch.sdk.PrinterInfo;
 import com.brother.ptouch.sdk.PrinterStatus;
+import com.brother.ptouch.sdk.ErrorCode;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Base64;
