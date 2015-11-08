@@ -32,7 +32,7 @@ public class BrotherPrinter extends CordovaPlugin {
     myPrinter.setBluetooth(bluetoothAdapter);
     myPrinterInfo = myPrinter.getPrinterInfo();
     myPrinterInfo.printerModel = PrinterInfo.Model.PJ_662;
-    myPrinterInfo.paperSize = PrinterInfo.PaperSize.A4;
+    myPrinterInfo.paperSize = PrinterInfo.PaperSize.LETTER;
     myPrinterInfo.orientation = PrinterInfo.Orientation.PORTRAIT;
     myPrinterInfo.numberOfCopies = 1;
     myPrinter.setPrinterInfo(myPrinterInfo);
