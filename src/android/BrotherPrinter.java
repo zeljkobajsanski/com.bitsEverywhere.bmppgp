@@ -41,7 +41,7 @@ public class BrotherPrinter extends CordovaPlugin {
     try {
         Bitmap image = base64ToBitmap(data);
         status = myPrinter.printImage(image);
-        if (status.errorCode == PrinterStatus.ERROR_NONE) {
+        if (status.errorCode == ErrorCode.ERROR_NONE) {
             callbackContext.success();
         } else {
             callbackContext.error(status.errorCode.toString());
